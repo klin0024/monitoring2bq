@@ -3,6 +3,8 @@
 
 ### Monitoring
 
+Example:
+
 ```
 python monitoring.py --project gcp-expert-sandbox-allen --bucket gcp-expert-sandbox-allen-monitoring --dataset monitoring --table monitoring --filters "storage.googleapis.com/storage/object_count,storage.googleapis.com/storage/total_byte_seconds,storage.googleapis.com/storage/total_bytesbyte_count,storage.googleapis.com/storage/object_count"
 ```
