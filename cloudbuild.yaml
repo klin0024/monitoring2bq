@@ -1,0 +1,28 @@
+---
+steps:
+
+  - name: $_IMAGE
+    args: 
+    - --project=$_PROJECT_ID 
+    - --dataset=$_BQ_DATASET
+    - --table=$_BQ_TABLE
+    - --bucket=$_GCS_BUCKET 
+    - --filters=$_METRIC_FILTERS
+
+options:
+  env:
+  - TZ=$_TIMEZONE
+
+substitutions:
+  _IMAGE: us-central1-docker.pkg.dev/gcp-expert-sandbox-allen/demo/monitoring:v1
+  _TIMEZONE: Asia/Taipei
+  _PROJECT_ID: gcp-expert-sandbox-allen
+  #_PROJECT_ID: $PROJECT_ID
+  _BQ_DATASET: monitoring
+  _BQ_TABLE: monitoring
+  _GCS_BUCKET: gcp-expert-sandbox-allen-monitoring
+  #_METRIC_FILTERS: storage.googleapis.com/storage/object_count,storage.googleapis.com/storage/total_byte_seconds,storage.googleapis.com/storage/total_bytes
+  
+
+
+timeout: 6000s
